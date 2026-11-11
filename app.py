@@ -18,5 +18,5 @@ st.plotly_chart(fig)
 st.plotly_chart(px.scatter(df, x="study_hours", y="satisfaction", color=group))
 query = st.text_input("Search faculty")
 shown = df[df["faculty"].str.contains(query, case=False, na=False)]
-st.dataframe(shown, index=False); st.caption(f"{len(shown)} matching responses")
+st.dataframe(shown, hide_index=True); st.caption(f"{len(shown)} matching responses")
 st.download_button("Download matches", shown.to_csv(index=False), "matches.csv", "text/csv")
